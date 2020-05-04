@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{%block content%}
+<button onclick="window.location.reload()">Get Another Joke</button>
+<p id="container-joke"></p>
+{%endblock%}
+{%block script%}
+
+    <script language="javascript" src="http://www.jokes2go.com/cgi-bin/includejoke.cgi?type=j">
+    </script><noscript> <a href="http://www.jokes2go.com">funny jokes</a> </noscript><script language="javascript">var jokes2go = 'yes';</script>
+
+{%endblock%}

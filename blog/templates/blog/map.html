@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{%block style%}
+<style>
+    /* Set the size of the div element that contains the map */
+    #map {
+      height: 400px;  /* The height is 400 pixels */
+      width: 100%;  /* The width is the width of the web page */
+     }
+</style>
+{%endblock%}
+{%block content%}
+<h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var chirgaon = {lat: 25.57198, lng: 78.81432};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10, center: chirgaon});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: chirgaon, map: map});
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6PTrIN6hg9VtiHsw04p4cc5HH1lIDg3Y&callback=initMap">
+    </script>
+{%endblock%}
